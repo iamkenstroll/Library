@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Library📘</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>LIBRARY</h1>
+    </header>
+    <main class="main">
+      <button class="btn btn-open">Add Book</button>
+      <section class="modal hidden">
+        <button class="btn-close">X</button>
+        <form id="form">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="title"
+            required
+          />
+          <label for="author">Author</label>
+          <input
+            type="text"
+            name="author"
+            id="author"
+            placeholder="author"
+            required
+          />
+          <label for="pages">Pages</label>
+          <input
+            type="number"
+            name="pages"
+            id="pages"
+            placeholder="pages"
+            required
+          />
+          <label for="read">Read</label>
+          <input type="checkbox" name="read" id="read" />
+          <button id="add-book" class="btn btn-submit">Submit</button>
+          <button id="reset" class="btn">Reset</button>
+        </form>
+      </section>
+      <div class="overlay hidden"></div>
+
+      <div id="books-container"></div>
+    </main>
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Kennedy
+      </p>
+      <a href="https://github.com/iamkenstroll" target="_blank"></a>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
