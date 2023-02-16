@@ -91,9 +91,9 @@ button {
   margin: 20px;
   padding: 20px;
   width: 200px;
-  /* position: absolute;
+  position: absolute;
   top: 10%;
-  left: 42%; */
+  left: 42%;
 }
 
 .btn-close {

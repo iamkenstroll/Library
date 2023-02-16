@@ -46,12 +46,12 @@ addBook.addEventListener("click", closeModal);
 
 //ADD TO LIBRARY FUNCTION
 function addBookToLibrary() {
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("pages").value;
-  let read = document.getElementById("read").checked;
-  let readStatus = read ? "Read" : "Not read yet";
-  let book = new Book(title, author, pages, readStatus);
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read = document.getElementById("read").checked;
+  const readStatus = read ? "Read" : "Not read yet";
+  const book = new Book(title, author, pages, readStatus);
   for (let book of myLibrary) {
     if (book.title === title) {
       alert("Book already exists in library!");
@@ -72,7 +72,7 @@ form.addEventListener("submit", function (event) {
 
 // DISPLAY ALL ELEMENT IN AN ARRAY
 function displayBooks() {
-  let booksContainer = document.querySelector("#books-container");
+  const booksContainer = document.querySelector("#books-container");
   booksContainer.innerHTML = "";
   myLibrary.forEach((element, index) => {
     const divEl = document.createElement("div");
@@ -87,30 +87,25 @@ function displayBooks() {
       });
     }
     // TOGGLE BUTTON FOR READ STATUS
-    let paraToggle = document.querySelector(".card p:nth-child(4)");
-    let readToggle = document.createElement("button");
+    const paraToggle = document.querySelector(".card p:nth-child(4)");
+    const readToggle = document.createElement("button");
 
     readToggle.innerHTML = paraToggle.innerHTML;
     readToggle.setAttribute("class", "toggle-button");
     readToggle.setAttribute("type", "button");
     paraToggle.parentNode.replaceChild(readToggle, paraToggle);
-    if (readToggle.textContent === "Read") {
-      readToggle.style.backgroundColor = "#7FFFD4";
-    } else if (readToggle.textContent === "Not read yet") {
-      readToggle.style.backgroundColor = "#FF5733";
-    }
+    // readToggle.textContent === "Read" =
+    //readToggle.style.backgroundColor = "#7FFFD4";
+    //readToggle.textContent === "Not read yet"
+    //readToggle.style.backgroundColor = "#FF5733";
 
     readToggle.addEventListener("click", function () {
       if (readToggle.textContent === "Read") {
-        return (
-          (readToggle.textContent = "Not read yet"),
-          (readToggle.style.backgroundColor = "#FF5733")
-        );
+        return (readToggle.textContent = "Not read yet");
+        // (readToggle.style.backgroundColor = "#FF5733")
       } else {
-        return (
-          (readToggle.textContent = "Read"),
-          (readToggle.style.backgroundColor = "#7FFFD4")
-        );
+        return (readToggle.textContent = "Read");
+        //(readToggle.style.backgroundColor = "#7FFFD4")
       }
     });
 
@@ -123,7 +118,7 @@ function displayBooks() {
     }
 
     // REMOVE DIV THAT CONTAINS LIBRARY CARD
-    let removeButton = document.createElement("button");
+    const removeButton = document.createElement("button");
     removeButton.setAttribute("type", "button");
     removeButton.classList.add("remove-card");
     removeButton.textContent = "Remove book";
